@@ -1,0 +1,39 @@
+<h3>
+    <glyph icon="timer" size="medium" style="color:#2196F3"></glyph>
+    User Inactivity Demo in <a href="https://webdev.dartlang.org/">Angular2 Dart</a>.
+</h3>
+
+<p>
+    A demo app to showcase how to detect user inactivity in your window. You can activate it by mouse move, user input, click, scroll,
+    keypress, touch, resize, window focus etc.
+
+<p>
+
+<material-input #myInput
+                label="Your name"
+                floatingLabel
+                autoFocus>
+</material-input>
+
+<material-button raised
+                 (trigger)="myDialog.open()"
+                 class="blue">
+    Say Hello
+</material-button>
+
+<hello-dialog #myDialog
+              [name]="myInput.inputText">
+</hello-dialog>
+
+<div>
+    <acx-scorecard
+            selectable
+            [selected]="true"
+            label="Last active since,"
+            [value]="activeSince"
+            description="">
+    </acx-scorecard>
+    &nbsp;
+    <glyph class="heartbeat" [class.heartbeat-pause]='pauseAnimate' icon="favorite" #heartbeat></glyph>
+</div>
+

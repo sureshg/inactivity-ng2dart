@@ -1,0 +1,27 @@
+:host {
+    /* This is equivalent of the 'body' selector of a page. */
+}
+
+.blue {
+    background-color: #2196F3;
+    color: white;
+}
+
+.heartbeat {
+    color: crimson;
+    animation: beat .25s infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes beat {
+    to {
+        transform: scale(1.6);
+    }
+}
+
+.heartbeat-pause {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}

@@ -39,7 +39,7 @@ class AppComponent implements OnDestroy, AfterViewInit {
       window.onPageShow,
       window.onFocus,
       window.onContextMenu
-    ]).distinct();
+    ]);
 
     await for (Event e in brEvents) {
       _time = systemTime();

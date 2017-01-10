@@ -29,15 +29,17 @@ class AppComponent implements OnDestroy, AfterViewInit {
     new Timer.periodic(aMillisecond * 500, (t) => update());
     var brEvents = StreamGroup.merge([
       window.onMouseUp,
-      window.onResize,
+      window.onMouseDown,
       window.onMouseMove,
+      window.onMouseWheel,
       window.onScroll,
+      window.onResize,
       window.onKeyPress,
-      window.onClick,
       window.onTouchStart,
       window.onPageShow,
-      window.onFocus
-    ]);
+      window.onFocus,
+      window.onContextMenu
+    ]).distinct();
 
     await for (Event e in brEvents) {
       _time = systemTime();
